@@ -1,20 +1,57 @@
+import javax.swing.*;
+import java.awt.event.*;
 import java.awt.*;
 
-import java.awt.event.*;
-import javax.swing.*;
-public class Quiz extends Frame {
-    public Quiz() {
-        setSize(300, 200); //크기 설정
-        setTitle("Quiz 화면");
-        
-        setLayout(new FlowLayout()); //배치 관리자 설정
-        JButton button = new JButton("이전문제");
-        JButton button1 = new JButton("다음문제");
+public class Quiz extends JFrame {
+	Container contentPane;
+	JLabel imageLabel;
+	ImageIcon img0;
+	ImageIcon img1;
+	ImageIcon img2;
 
-        //컴포넌트 생성 및 추가
-        this.add(button);
-        this.add(button1);
-        setVisible(true);
-    }
-    
+	public Quiz() {
+		setTitle("Quiz window");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		contentPane = getContentPane();
+		contentPane.setLayout(new BorderLayout());
+
+		img0 = new ImageIcon("./imgaes/mango.png");
+		img1 = new ImageIcon("./imgaes/mango.png");
+		img2 = new ImageIcon("./imgaes/banana.jpg");
+
+		imageLabel = new JLabel(img0);
+		contentPane.add(imageLabel, BorderLayout.CENTER);
+		contentPane.add(new MenuPanel(), BorderLayout.SOUTH);
+
+		setSize(900, 600);
+		setVisible(true);
+	}
+
+	class MenuPanel extends JPanel {
+		public MenuPanel() {
+
+			JButton btn1 = new JButton("다음");
+			JButton btn2 = new JButton("이전");
+
+			add(btn1);
+			add(btn2);
+
+			btn1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					imageLabel.setIcon(img1);
+				}
+			});
+
+			btn2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					imageLabel.setIcon(img2);
+				}
+			});
+		}
+	}
+
+	public static void main(String[] args) {
+		new Quiz();
+	}
 }
