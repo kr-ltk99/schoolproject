@@ -1,6 +1,5 @@
 
 import java.awt.*;
-
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -106,10 +105,10 @@ public class Stopwatch implements ActionListener{
 			reset();
 		}
 		
-		while (e.getSource()==commandButton){
-			String right =right_field.getText();
+		if(e.getSource()==commandButton){
+			right =right_field.getText();
 			if(rightcommand==right){
-				new rightclean();
+				rightclean rightclean =new rightclean();
 			}
 		}
 	}	
