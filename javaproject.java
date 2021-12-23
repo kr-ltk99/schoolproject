@@ -1,4 +1,3 @@
-
 import java.awt.*;
 
 import java.awt.event.*;
@@ -15,9 +14,9 @@ public class javaproject extends JFrame {
 
     JButton color; 
 
-    JLabel thick_label,right_label;
+    JLabel thick_label;
 
-    JTextField thick_field,right_field;  //도구 굵기가 정해질 텍스트 필드
+    JTextField thick_field;  //도구 굵기가 정해질 텍스트 필드
 
     Color selectedColor; 
 
@@ -71,7 +70,7 @@ public class javaproject extends JFrame {
 
 
 
-        ImageIcon icon = new ImageIcon("C:\\Users\\LEE\\Downloads\\p.png");   //연필 버튼 생성
+        ImageIcon icon = new ImageIcon("./img/펜.png");   //연필 버튼 생성
 
         Image img = icon.getImage();
 
@@ -87,7 +86,7 @@ public class javaproject extends JFrame {
 
         
 
-        ImageIcon icon2 = new ImageIcon("C:\\Users\\LEE\\Downloads\\d.jpg");   //지우개 버튼 생성
+        ImageIcon icon2 = new ImageIcon("./img/지우개.png");   //지우개 버튼 생성
 
         Image img2 = icon2.getImage();
 
@@ -123,21 +122,9 @@ public class javaproject extends JFrame {
 
         thick_field.setHorizontalAlignment(JTextField.CENTER); 
 
-        thick_field.setFont(new Font("Serif", Font.PLAIN, 25)); 
-        ////////////////////////////////////////////////////////////////////
-        right_label = new JLabel("정답");  //도구 굵기 라벨 지정 
+        thick_field.setFont(new Font("Serif", Font.PLAIN, 25));         
 
-        right_label.setFont(new Font("Serif", Font.BOLD, 20));  //도구 굵기 라벨 폰트 및 글씨 크기 지정    
 
-        right_field = new JTextField(right, 5); // 도구 굵기 입력 텍스트 필드 생성
-
-        right_field.setHorizontalAlignment(JTextField.CENTER); 
-
-        right_field.setFont(new Font("Serif", Font.PLAIN, 25));
-
-        
-
-       
 
         pencil.setBounds(10,10,90,55);  //연필 버튼 위치 조정
 
@@ -150,9 +137,6 @@ public class javaproject extends JFrame {
         thick_label.setBounds(675,10,100,55); //도구 굵기 라벨 위치 조정
 
         thick_field.setBounds(720,22,50,35);  //도구 굵기 텍스트 필드 위치 조정
-        
-        right_label.setBounds(500,10,100,55);
-        right_field.setBounds(330+220,22,50,35);
 
         
 
@@ -167,18 +151,10 @@ public class javaproject extends JFrame {
         panel.add(thick_label); //panel에 도구굵기 라벨 추가
 
         panel.add(thick_field);  //panel에 도구굵기 텍스트 필트 추가
-        ///////////////////////////////////////////////////
-        panel.add(right_label); //panel에 정답굵기 라벨 추가
-
-        panel.add(right_field);  //panel에 정답굵기 텍스트 필트 추가
-
+  
         panel.setBounds(0,0,900,75);  //panel이 프레임에 배치될 위치 지정
 
-      
-
-        
-
-        
+          
 
         paint = new JPanel();   //그림이 그려질 패널 생성 
 
@@ -427,15 +403,6 @@ public class javaproject extends JFrame {
         }
 
     }
-
-    
-
-    
-
-    
-
-    
-
    
 
 }
